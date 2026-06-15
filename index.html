@@ -260,7 +260,13 @@
   /* responsive */
   @media (max-width:920px){
     .hero .grid,.split,.author{grid-template-columns:1fr;gap:38px}
-    .hero-media{order:-1;max-width:420px;margin:0 auto}
+    .hero-copy{display:contents}
+    .hero-copy{text-align:center}
+    .hero-copy .eyebrow,.hero-copy .byline{display:none}
+    .hero-copy .trust{justify-content:center}
+    .hero-media{order:2;max-width:420px;margin:0 auto}
+    .hero-copy > .btn{order:3;margin:0 auto}
+    .hero-copy > .trust{order:4}
     .cards,.bonus,.features{grid-template-columns:repeat(2,1fr)}
     .wide-strip{grid-template-columns:repeat(3,1fr)}
     .foot .cols{grid-template-columns:1fr 1fr}
@@ -321,7 +327,7 @@
   <section class="hero">
     <div class="wrap">
       <div class="grid">
-        <div data-reveal>
+        <div class="hero-copy" data-reveal>
           <span class="eyebrow">E-book · Inverno Gourmet</span>
           <h1 class="h-xl">Mais de 25 receitas que transformam o frio na <em>melhor parte</em> do dia.</h1>
           <p class="lead">Caldos, sopas e cremes gourmet — prontos em minutos e sem complicação. Pra quem ama comida quentinha e aconchegante mas não quer passar horas na cozinha, com opções leves e low carb pra se aquecer no inverno sem sair da dieta.</p>
