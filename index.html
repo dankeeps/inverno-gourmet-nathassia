@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inverno Gourmet — Nathássia Pécora</title>
+<!--
+  PÁGINA DE VENDAS · INVERNO GOURMET (Nathássia Pécora)
+  Design system inspirado na página "Sopinhas que Secam".
+  TROCAR DEPOIS: blocos .ph (placeholders de foto) -> fotos reais dos pratos /
+  foto da Nathássia; depoimentos ilustrativos -> prints reais; preço/parcelamento.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1f3a2b;
+    --green-2:#2a4c39;
+    --green-soft:#34583f;
+    --cream:#f7f3eb;
+    --cream-2:#efe7d8;
+    --sand:#f1e5d3;
+    --paper:#fffefb;
+    --ink:#3a473a;
+    --orange:#c25e2a;
+    --orange-2:#a84e1f;
+    --orange-tint:#f3e2d2;
+    --muted:#73806f;
+    --cream-text:#f2ece0;
+    --cream-dim:#b6c4b1;
+    --line:#e6dfcd;
+    --line-green:rgba(242,236,224,.15);
+    --shadow:0 14px 40px rgba(31,58,43,.10);
+    --shadow-sm:0 6px 18px rgba(31,58,43,.08);
+    --r:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter",-apple-system,system-ui,sans-serif;
+    background:var(--cream);color:var(--ink);
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:"Playfair Display",Georgia,"Times New Roman",serif}
+  em{font-style:italic;color:var(--orange)}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--green);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 24px}
+  .sec{padding:84px 0}
+  .sec--green{background:var(--green);color:var(--cream-text)}
+  .sec--green h2{color:var(--cream-text)}
+  .sec--sand{background:var(--sand)}
+  .sec--cream2{background:var(--cream-2)}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--orange);margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange)}
+  .sec--green .eyebrow{color:#e08a4f}
+
+  .h-xl{font-size:clamp(2.5rem,5.4vw,4.2rem)}
+  .h-lg{font-size:clamp(2rem,4.2vw,3.1rem)}
+  .lead{font-size:1.08rem;color:var(--ink);max-width:54ch}
+  .sec--green .lead{color:var(--cream-dim)}
+  .center{text-align:center}
+  .center .eyebrow{justify-content:center}
+  .center .lead{margin-left:auto;margin-right:auto}
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--orange);color:#fff;font-weight:600;font-size:1.02rem;
+    padding:18px 34px;border-radius:999px;border:none;cursor:pointer;
+    box-shadow:0 10px 24px rgba(194,94,42,.32);transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
+  }
+  .btn:hover{background:var(--orange-2);transform:translateY(-2px);box-shadow:0 14px 30px rgba(194,94,42,.38)}
+  .btn .arw{transition:transform .18s ease}
+  .btn:hover .arw{transform:translateX(4px)}
+  .micro{font-size:.84rem;color:var(--muted);margin-top:14px}
+  .sec--green .micro{color:var(--cream-dim)}
+
+  /* placeholders for photos */
+  svg.symset{position:absolute;width:0;height:0}
+  .ph{position:relative;display:grid;place-items:center;color:#fff;overflow:hidden;border-radius:var(--r)}
+  .ph .ico{width:48px;height:48px;opacity:.9}
+  .ph .ptag{position:absolute;left:14px;bottom:12px;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+  .ph.amber{background:linear-gradient(135deg,#eaa24a,#c4631c)}
+  .ph.pumpkin{background:linear-gradient(140deg,#edab44,#cf6912)}
+  .ph.green{background:linear-gradient(140deg,#3f6b46,#23492f)}
+  .ph.sage{background:linear-gradient(140deg,#84a070,#4f7048)}
+  .ph.creamy{background:linear-gradient(135deg,#ead9b6,#cdb27c);color:#5a4a28}
+  .ph.cocoa{background:linear-gradient(135deg,#7e4c2d,#4d2b17)}
+  .ph.tomato{background:linear-gradient(135deg,#d7642f,#a23315)}
+
+  /* announcement + nav */
+  .announce{background:var(--green);color:var(--cream-dim);text-align:center;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:10px 16px;font-weight:500}
+  .announce b{color:#e08a4f}
+  .nav{background:var(--cream);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Playfair Display",serif;font-size:1.35rem;color:var(--green);font-weight:600}
+  .brand .mark{width:30px;height:30px;display:grid;place-items:center;background:var(--orange);border-radius:50%;color:#fff}
+  .brand .mark svg{width:17px;height:17px}
+  .nav .pill{border:1.5px solid var(--green);color:var(--green);padding:9px 20px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:.18s}
+  .nav .pill:hover{background:var(--green);color:var(--cream)}
+
+  /* hero */
+  .hero{background:var(--cream);padding:70px 0 60px}
+  .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{margin-bottom:24px}
+  .hero .lead{margin-bottom:10px}
+  .hero .byline{font-family:"Playfair Display",serif;font-style:italic;font-size:1.05rem;color:var(--green);margin-bottom:28px}
+  .trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:.86rem;color:var(--muted);font-weight:500}
+  .trust span{display:inline-flex;align-items:center;gap:7px}
+  .trust svg{width:16px;height:16px;color:var(--green-soft)}
+  .hero-media{position:relative}
+  .hero-media .ph{aspect-ratio:4/4.4;box-shadow:var(--shadow)}
+  .hero-media .ico{width:70px;height:70px}
+  .badge{position:absolute;top:-14px;right:-12px;background:var(--paper);border-radius:14px;box-shadow:var(--shadow-sm);padding:12px 16px;font-size:.82rem;font-weight:600;color:var(--green);display:flex;align-items:center;gap:9px;line-height:1.2}
+  .badge .dot{width:34px;height:34px;border-radius:10px;background:var(--orange-tint);display:grid;place-items:center;color:var(--orange);font-size:.78rem}
+
+  /* category band — esteira / marquee */
+  .cats{background:var(--green);color:var(--cream-dim)}
+  .marquee{overflow:hidden;padding:18px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .marquee__track{display:flex;width:max-content;animation:cats-scroll 28s linear infinite}
+  .marquee__group{display:flex;align-items:center;flex:0 0 auto}
+  .marquee__group span{font-family:"Playfair Display",serif;font-size:1.12rem;white-space:nowrap;padding:0 30px;position:relative;color:var(--cream-dim)}
+  .marquee__group span::after{content:"·";position:absolute;right:-2px;top:50%;transform:translateY(-50%);color:#e08a4f}
+  @keyframes cats-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* checklist block */
+  .split{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}
+  .split .ph{aspect-ratio:4/4.6;box-shadow:var(--shadow)}
+  .check-list{list-style:none;margin-top:20px;display:grid;gap:16px}
+  .check-list li{display:flex;gap:14px;align-items:flex-start;font-size:1rem}
+  .check-list .ck{flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:var(--green);display:grid;place-items:center;margin-top:1px}
+  .check-list .ck svg{width:14px;height:14px;color:var(--cream-text)}
+  .check-list b{color:var(--green)}
+  .mt-cta{margin-top:42px}
+
+  /* recipe cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px}
+  .card{background:var(--paper);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .card .ph{border-radius:0;aspect-ratio:16/11}
+  .card-tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.92);color:var(--green);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .card-body{padding:20px 22px 24px}
+  .card-body h3{font-size:1.28rem;margin-bottom:8px}
+  .card-body p{font-size:.92rem;color:var(--muted);line-height:1.55}
+  .card-meta{display:flex;gap:16px;margin-top:14px;font-size:.78rem;color:var(--green-soft);font-weight:600}
+
+  /* desire / wide image */
+  .wide-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px 0;max-width:880px;margin-left:auto;margin-right:auto}
+  .wide-strip .ph{aspect-ratio:1/1}
+
+  /* feature strip */
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:14px}
+  .feature{text-align:center}
+  .feature .fi{width:56px;height:56px;border-radius:16px;background:var(--paper);box-shadow:var(--shadow-sm);display:grid;place-items:center;margin:0 auto 16px;font-size:1.5rem}
+  .feature h3{font-size:1.14rem;margin-bottom:6px}
+  .feature p{font-size:.9rem;color:var(--muted)}
+
+  /* bonus */
+  .bonus{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+  .bonus .card .ph{aspect-ratio:1/1}
+  .bonus .card-body h3{font-size:1.12rem;line-height:1.2}
+  .bonus .b-kicker{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .bonus p{margin:8px 0 14px}
+  .b-price{display:flex;align-items:center;gap:10px;font-size:.9rem}
+  .b-price s{color:var(--muted)}
+  .b-price b{color:var(--orange);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.78rem}
+
+  /* offer / pricing */
+  .offer-card{background:var(--green-2);border-radius:24px;max-width:640px;margin:46px auto 0;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+  .offer-head{background:var(--green);padding:26px 30px;text-align:center;border-bottom:1px solid var(--line-green)}
+  .offer-head .ok{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-dim)}
+  .offer-head h3{color:var(--cream-text);font-size:1.5rem;margin-top:4px}
+  .offer-list{list-style:none;padding:14px 30px}
+  .offer-list li{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line-green);font-size:.96rem;color:var(--cream-text)}
+  .offer-list li:last-child{border-bottom:none}
+  .offer-list .n{flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:.78rem;font-weight:700}
+  .offer-list .nm{flex:1}
+  .offer-list .pr{color:var(--cream-dim);font-size:.86rem}
+  .offer-list .pr s{opacity:.7}
+  .offer-list .free{color:#e89c5f;font-weight:700;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
+  .price-box{margin:8px 26px 26px;background:rgba(0,0,0,.22);border-radius:16px;padding:26px;text-align:center}
+  .price-box .anchor{font-size:.92rem;color:var(--cream-dim)}
+  .price-box .anchor s{opacity:.8}
+  .price-box .now{font-family:"Playfair Display",serif;font-size:3.2rem;color:var(--cream-text);line-height:1;margin:6px 0 2px}
+  .price-box .now small{font-size:1.2rem;vertical-align:super;margin-right:2px}
+  .price-box .inst{font-size:.92rem;color:var(--cream-dim);margin-bottom:6px}
+  .price-box .off{display:inline-block;background:var(--orange);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:20px}
+  .price-box .btn{width:100%;justify-content:center}
+  .pay{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:18px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim)}
+  .pay .chip{border:1px solid var(--line-green);border-radius:7px;padding:4px 10px;font-weight:600;letter-spacing:.06em}
+
+  /* guarantee */
+  .guarantee{display:flex;gap:28px;align-items:center;background:var(--paper);border-radius:20px;box-shadow:var(--shadow-sm);padding:34px;max-width:680px;margin:34px auto 0}
+  .seal{flex:0 0 96px;width:96px;height:96px;border-radius:50%;border:2px dashed var(--green-soft);display:grid;place-items:center;text-align:center;color:var(--green)}
+  .seal .big{font-family:"Playfair Display",serif;font-size:1.7rem;line-height:1;font-weight:700}
+  .seal .sm{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase}
+  .guarantee h3{font-size:1.4rem;margin-bottom:8px}
+  .guarantee p{font-size:.95rem;color:var(--muted)}
+
+  /* author */
+  .author{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center}
+  .author .ph{aspect-ratio:4/4.4;box-shadow:var(--shadow)}
+  .author .ph.creamy .ico{display:none}
+  .name-tag{position:absolute;left:16px;bottom:16px;background:var(--paper);border-radius:12px;padding:9px 15px;box-shadow:var(--shadow-sm)}
+  .name-tag b{display:block;font-family:"Playfair Display",serif;color:var(--green);font-size:1.05rem}
+  .name-tag span{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:600}
+  .quote{font-family:"Playfair Display",serif;font-style:italic;font-size:1.18rem;color:var(--green);border-left:3px solid var(--orange);padding-left:18px;margin:22px 0}
+  .stats{display:flex;gap:40px;margin:24px 0 28px}
+  .stats .st b{display:block;font-family:"Playfair Display",serif;font-size:1.9rem;color:var(--orange);line-height:1}
+  .stats .st span{font-size:.78rem;color:var(--muted)}
+  .author p{margin-bottom:14px}
+
+  /* testimonials */
+  .tnote{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:6px}
+  .tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:42px}
+  .tcard{background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow-sm);padding:28px}
+  .stars{color:var(--orange);letter-spacing:3px;font-size:.95rem;margin-bottom:12px}
+  .tcard p{font-size:1rem;color:var(--ink)}
+  .tcard .who{margin-top:16px;font-size:.84rem;color:var(--muted);font-weight:600}
+
+  /* faq */
+  .faq{max-width:760px;margin:42px auto 0}
+  details{background:var(--paper);border-radius:14px;box-shadow:var(--shadow-sm);margin-bottom:12px;overflow:hidden}
+  summary{list-style:none;cursor:pointer;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:"Playfair Display",serif;font-size:1.1rem;color:var(--green)}
+  summary::-webkit-details-marker{display:none}
+  summary .pm{flex:0 0 26px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--orange);color:var(--orange);display:grid;place-items:center;font-size:1.1rem;transition:transform .2s ease}
+  details[open] summary .pm{transform:rotate(45deg)}
+  details .ans{padding:0 24px 22px;color:var(--ink);font-size:.96rem}
+
+  /* final cta */
+  .final{text-align:center}
+  .final h2{margin-bottom:14px}
+
+  /* footer */
+  .foot{background:var(--green);color:var(--cream-dim);padding:64px 0 30px}
+  .foot .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:40px;border-bottom:1px solid var(--line-green)}
+  .foot .brand{color:var(--cream-text);margin-bottom:14px}
+  .foot .ftag{font-size:.9rem;max-width:30ch;color:var(--cream-dim)}
+  .foot h4{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#e08a4f;margin-bottom:16px;font-family:"Inter",sans-serif;font-weight:700}
+  .foot ul{list-style:none;display:grid;gap:10px;font-size:.9rem}
+  .foot .chips{display:flex;gap:10px}
+  .foot .chips .chip{border:1px solid var(--line-green);border-radius:7px;padding:5px 12px;font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--cream-text)}
+  .legal{padding-top:26px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:.74rem;color:#8aa089}
+  .legal .disc{max-width:62ch;line-height:1.6}
+  .legal a{letter-spacing:.1em;text-transform:uppercase}
+
+  /* reveal */
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  [data-reveal].in{opacity:1;transform:none}
+
+  /* responsive */
+  @media (max-width:920px){
+    .hero .grid,.split,.author{grid-template-columns:1fr;gap:38px}
+    .hero-media{order:-1;max-width:420px;margin:0 auto}
+    .cards,.bonus,.features{grid-template-columns:repeat(2,1fr)}
+    .wide-strip{grid-template-columns:repeat(3,1fr)}
+    .foot .cols{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){
+    .sec{padding:60px 0}
+    .wrap{padding:0 18px}
+    .cards,.bonus,.features,.tgrid{grid-template-columns:1fr}
+    .wide-strip{grid-template-columns:1fr 1fr}
+    .stats{gap:26px}
+    .guarantee{flex-direction:column;text-align:center}
+    .marquee__group span{font-size:1rem;padding:0 22px}
+    .marquee__track{animation-duration:22s}
+    .price-box .now{font-size:2.6rem}
+    .legal{flex-direction:column}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto}
+    [data-reveal]{opacity:1;transform:none;transition:none}
+    .btn,.card{transition:none}
+    .marquee__track{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<svg class="symset" aria-hidden="true">
+  <symbol id="bowl" viewBox="0 0 48 48">
+    <path d="M9 25h30a15 15 0 0 1-30 0Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+    <ellipse cx="24" cy="25" rx="15" ry="3.6" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <path d="M18 9c2.6 2.6-2.6 4.4 0 7.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M24 7.5c2.6 2.6-2.6 4.4 0 7.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M30 9c2.6 2.6-2.6 4.4 0 7.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="check" viewBox="0 0 24 24">
+    <path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 24 24">
+    <path d="M4 12h15m0 0l-6-6m6 6l-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="announce">❄ Oferta especial · Acesso imediato por WhatsApp + e-mail · <b>⏱ Expira em <span id="countdown">23:54:07</span></b></div>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="#"><span class="mark"><svg><use href="#bowl"/></svg></span> Nathássia Pécora</a>
+      <a class="pill" href="#oferta">Quero acesso</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="grid">
+        <div data-reveal>
+          <span class="eyebrow">E-book · Inverno Gourmet</span>
+          <h1 class="h-xl">Mais de 25 receitas que transformam o frio na <em>melhor parte</em> do dia.</h1>
+          <p class="lead">Caldos, sopas e cremes gourmet — prontos em minutos e sem complicação. Pra quem ama comida quentinha e aconchegante mas não quer passar horas na cozinha, com opções leves e low carb pra se aquecer no inverno sem sair da dieta.</p>
+          <p class="byline">Direto da cozinha da chef Nathássia Pécora.</p>
+          <a class="btn" href="#oferta">Quero minhas receitas <svg class="arw" width="20" height="20"><use href="#arrow"/></svg></a>
+          <div class="trust">
+            <span><svg><use href="#check"/></svg> +25 receitas</span>
+            <span><svg><use href="#check"/></svg> 4 bônus inclusos</span>
+            <span><svg><use href="#check"/></svg> acesso vitalício</span>
+          </div>
+        </div>
+        <div class="hero-media" data-reveal>
+          <div class="ph pumpkin">
+            <img src="imagemhero.png" alt="Foto de capa / prato principal" style="width:100%;height:100%;object-fit:cover">
+          </div>
+          <div class="badge"><span class="dot">❄</span> +25 receitas<br>de inverno</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY BAND (esteira) -->
+  <div class="cats">
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>Sopas</span><span>Caldos</span><span>Cremes</span><span>Fondues</span><span>Bebidas quentes</span>
+          <span>Sopas</span><span>Caldos</span><span>Cremes</span><span>Fondues</span><span>Bebidas quentes</span>
+        </div>
+        <div class="marquee__group">
+          <span>Sopas</span><span>Caldos</span><span>Cremes</span><span>Fondues</span><span>Bebidas quentes</span>
+          <span>Sopas</span><span>Caldos</span><span>Cremes</span><span>Fondues</span><span>Bebidas quentes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O QUE VOCÊ VAI ENCONTRAR -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="split">
+        <div data-reveal>
+          <div class="ph amber">
+            <img src="Imagem2.png" alt="Foto · mesa posta de inverno" style="width:100%;height:100%;object-fit:cover">
+          </div>
+        </div>
+        <div data-reveal>
+          <span class="eyebrow">O que vem no e-book</span>
+          <h2 class="h-lg">Tudo o que você precisa pra resolver suas <em>noites de inverno</em>.</h2>
+          <ul class="check-list">
+            <li><span class="ck"><svg><use href="#check"/></svg></span><span><b>Caldos e cremes encorpados que aquecem de verdade</b> — o jantar que abraça depois de um dia frio.</span></li>
+            <li><span class="ck"><svg><use href="#check"/></svg></span><span><b>Sopas completas que servem como refeição única</b> — mata a fome sem precisar de mais nada no prato.</span></li>
+            <li><span class="ck"><svg><use href="#check"/></svg></span><span><b>Opções leves, detox e low carb</b> — comer quentinho e gostoso sem o peso de engordar no inverno.</span></li>
+            <li><span class="ck"><svg><use href="#check"/></svg></span><span><b>Substituições vegetarianas e veganas em quase todas</b> — ninguém fica de fora da mesa.</span></li>
+            <li><span class="ck"><svg><use href="#check"/></svg></span><span><b>Preparo simples, com rendimento e panela indicados</b> — você sabe quanto rende e quanto tempo leva.</span></li>
+            <li><span class="ck"><svg><use href="#check"/></svg></span><span><b>O toque gourmet da chef no dia a dia</b> — comida de casa com sabor de restaurante.</span></li>
+            <li><span class="ck"><svg><use href="#check"/></svg></span><span><b>Tudo organizado por categorias</b> — é só escolher o que o seu dia (e a sua vontade) pede.</span></li>
+          </ul>
+          <a class="btn mt-cta" href="#oferta">Quero as receitas <svg class="arw" width="20" height="20"><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VITRINE / CARDÁPIO -->
+  <section class="sec sec--cream2">
+    <div class="wrap">
+      <div class="center" data-reveal>
+        <span class="eyebrow">O cardápio</span>
+        <h2 class="h-lg">Um cardápio que vai do <em>conforto ao gourmet</em>.</h2>
+        <p class="lead">Um gostinho do que te espera lá dentro — do clássico que todo mundo ama ao prato que vira evento na mesa.</p>
+      </div>
+      <div class="cards">
+        <article class="card" data-reveal>
+          <div class="ph pumpkin"><img src="sopa_cremosa_com_frango_e_ervas.png" alt="Creme de abóbora cabotiá com frango" style="width:100%;height:100%;object-fit:cover"><span class="card-tag">Creme</span></div>
+          <div class="card-body"><h3>Creme de abóbora cabotiá com frango</h3><p>O clássico aveludado que todo mundo ama — com versão vegetariana.</p><div class="card-meta"><span>🍽 4 porções</span></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph green"><img src="caldo_verde_com_músculo.png" alt="Caldo verde com músculo" style="width:100%;height:100%;object-fit:cover"><span class="card-tag">Caldo</span></div>
+          <div class="card-body"><h3>Caldo verde com músculo</h3><p>Encorpado, substancioso, daqueles de raspar a panela.</p><div class="card-meta"><span>🍽 4 porções</span></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph creamy"><img src="creme_de_batata_do_outback.png" alt="Creme de batata do Outback" style="width:100%;height:100%;object-fit:cover"><span class="card-tag">Creme</span></div>
+          <div class="card-body"><h3>Creme de batata do Outback</h3><p>Sim, <em>aquele</em> do restaurante — agora na sua cozinha.</p><div class="card-meta"><span>🍽 4 porções</span></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph tomato"><img src="mandioca_com_costela_na_pressão.png" alt="Mandioca com costela na pressão" style="width:100%;height:100%;object-fit:cover"><span class="card-tag">Raiz</span></div>
+          <div class="card-body"><h3>Mandioca com costela na pressão</h3><p>Comida de raiz, daquelas que aquecem a alma.</p><div class="card-meta"><span>🍽 6 porções</span></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph amber"><img src="canja_gourmet.png" alt="Canja gourmet" style="width:100%;height:100%;object-fit:cover"><span class="card-tag">Sopa</span></div>
+          <div class="card-body"><h3>Canja gourmet</h3><p>A canja de sempre com um toque que muda tudo.</p><div class="card-meta"><span>🍽 porção família</span></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph sage"><img src="Sopa_seca_barriga_sopa_detox.png" alt="Sopa seca barriga &amp; Sopa detox" style="width:100%;height:100%;object-fit:cover"><span class="card-tag">Low carb</span></div>
+          <div class="card-body"><h3>Sopa seca barriga &amp; Sopa detox</h3><p>Leveza pra equilibrar os dias mais pesados.</p><div class="card-meta"><span>🥗 leve</span></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph green"><img src="caldo_de_couve_flor_low_carb.png" alt="Caldo de couve-flor low carb" style="width:100%;height:100%;object-fit:cover"><span class="card-tag">Low carb</span></div>
+          <div class="card-body"><h3>Caldo de couve-flor low carb</h3><p>Cremoso, reconfortante e sem culpa.</p><div class="card-meta"><span>🍽 4 porções</span></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph creamy"><img src="creme_de_palmito_no_pão_italiano.png" alt="Creme de palmito no pão italiano" style="width:100%;height:100%;object-fit:cover"><span class="card-tag">Creme</span></div>
+          <div class="card-body"><h3>Creme de palmito no pão italiano</h3><p>O prato que vira evento na mesa.</p><div class="card-meta"><span>🍽 serve até 4</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMPLIFICAÇÃO DE DESEJO -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="center" data-reveal>
+        <span class="eyebrow">O aconchego</span>
+        <h2 class="h-lg">Imagina chegar num dia gelado e ter <em>isso pronto</em>.</h2>
+      </div>
+      <div class="wide-strip" data-reveal>
+        <div class="ph amber" style="grid-column:1/-1;aspect-ratio:1672/941"><img src="b4_background.png" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+      </div>
+      <div class="center" data-reveal>
+        <p class="lead">A panela fumegando, o cheiro tomando conta da cozinha, aquela primeira colherada que aquece de dentro pra fora. Sem pedir delivery caro, sem ficar horas no fogão, sem culpa depois. É o tipo de refeição que faz o inverno valer a pena — e que transforma um jantar comum no melhor momento do seu dia.</p>
+        <a class="btn mt-cta" href="#oferta">Quero esse inverno <svg class="arw" width="20" height="20"><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATO E ACESSO -->
+  <!-- BÔNUS -->
+  <section class="sec sec--sand">
+    <div class="wrap">
+      <div class="center" data-reveal>
+        <span class="eyebrow">Bônus exclusivos</span>
+        <h2 class="h-lg">E ainda vai levar <em>4 bônus completos</em>.</h2>
+      </div>
+      <div class="bonus">
+        <article class="card" data-reveal>
+          <div class="ph cocoa"><img src="fondues_gourmet.png" alt="Fondues Gourmet" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="card-body"><div class="b-kicker">Bônus 01</div><h3>Fondues Gourmet</h3><p>De queijo e de chocolate: a noite comum que vira o jantar a dois (ou em família) inesquecível.</p><div class="b-price"><s>R$ 27</s> <b>Grátis hoje</b></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph creamy"><img src="6_molhos_para_fondue_de_carne.png" alt="6 Molhos para Fondue de Carne" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="card-body"><div class="b-kicker">Bônus 02</div><h3>6 Molhos para Fondue de Carne</h3><p>Rosado, alho, verde e mais — os molhos que você só encontrava no rodízio.</p><div class="b-price"><s>R$ 19</s> <b>Grátis hoje</b></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph amber"><img src="acompanhamentos_da_casa.png" alt="Acompanhamentos da Casa" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="card-body"><div class="b-kicker">Bônus 03</div><h3>Acompanhamentos da Casa</h3><p>Torradinhas da Vó Dibi + croutons caseiros: o crocante perfeito pros caldos e cremes.</p><div class="b-price"><s>R$ 17</s> <b>Grátis hoje</b></div></div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="ph cocoa"><img src="bebidas_quentes.png" alt="Bebidas Quentes" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="card-body"><div class="b-kicker">Bônus 04</div><h3>Bebidas Quentes</h3><p>Chocolate quente cremoso + cappuccino caseiro pra fechar a noite quentinho.</p><div class="b-price"><s>R$ 17</s> <b>Grátis hoje</b></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA / PREÇO -->
+  <section class="sec sec--green" id="oferta">
+    <div class="wrap">
+      <div class="center" data-reveal>
+        <span class="eyebrow">Oferta de inverno</span>
+        <h2 class="h-lg">Tudo isso por <em>menos que um delivery</em>.</h2>
+        <p class="lead">Receitas, caldos, cremes e 4 bônus. Acesso vitalício e imediato — sem mensalidade, sem pegadinha.</p>
+      </div>
+
+      <div class="offer-card" data-reveal>
+        <div class="offer-head">
+          <div class="ok">O pacote completo</div>
+          <h3>Inverno Gourmet</h3>
+        </div>
+        <ul class="offer-list">
+          <li><span class="n">1</span><span class="nm">E-book Inverno Gourmet (+25 receitas)</span><span class="pr">R$ 47</span></li>
+          <li><span class="n">2</span><span class="nm">Bônus · Fondues Gourmet</span><span class="pr"><s>R$ 27</s> <i class="free">Grátis</i></span></li>
+          <li><span class="n">3</span><span class="nm">Bônus · 6 Molhos para Fondue</span><span class="pr"><s>R$ 19</s> <i class="free">Grátis</i></span></li>
+          <li><span class="n">4</span><span class="nm">Bônus · Acompanhamentos da Casa</span><span class="pr"><s>R$ 17</s> <i class="free">Grátis</i></span></li>
+          <li><span class="n">5</span><span class="nm">Bônus · Bebidas Quentes</span><span class="pr"><s>R$ 17</s> <i class="free">Grátis</i></span></li>
+        </ul>
+        <div class="price-box">
+          <div class="anchor">Tudo isso valeria <s>R$ 127</s></div>
+          <div class="now"><small>R$</small>19,90</div>
+          <div class="inst">ou 2x de R$ 10,45 no cartão</div>
+          <div class="off">84% de desconto hoje</div>
+          <a class="btn" href="#">Quero o Inverno Gourmet <svg class="arw" width="20" height="20"><use href="#arrow"/></svg></a>
+          <div class="pay">🔒 Compra segura <span class="chip">Pix</span> <span class="chip">Cartão</span></div>
+        </div>
+      </div>
+
+      <div class="guarantee" data-reveal>
+        <div class="seal"><div><div class="big">7</div><div class="sm">Dias</div></div></div>
+        <div>
+          <h3>Teste sem risco por 7 dias completos.</h3>
+          <p>Testou as receitas e não amou? É só pedir o reembolso — 100% do valor de volta, sem perguntas e sem burocracia. O risco é todo meu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTORIDADE -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="author">
+        <div data-reveal>
+          <div class="ph creamy">
+            <img src="Nathassia.jpg" alt="Nathássia na cozinha" style="width:100%;height:100%;object-fit:cover">
+            <div class="name-tag"><b>Nathássia Pécora</b><span>Chef · Inverno Gourmet</span></div>
+          </div>
+        </div>
+        <div data-reveal>
+          <span class="eyebrow">Quem vai te ensinar</span>
+          <h2 class="h-lg">Direto da cozinha da <em>chef Nathássia Pécora</em>.</h2>
+          <p>Oi, eu sou a Nathássia Pécora. Arquiteta por vocação, chef por opção — e completamente apaixonada por gastronomia. Sou esposa, mãe das gêmeas Alice e Helena, e sei exatamente o que é querer comer bem sem ter o dia inteiro pra isso.</p>
+          <p>Minha missão é simples: te mostrar que cozinhar pode ser fácil, gostoso e bonito — e que a cozinha é pra todo mundo. Reuni neste e-book as receitas de inverno que mais fazem sucesso aqui em casa: aquelas que aquecem, que matam a fome, que impressionam quem senta à mesa — e que cabem na correria da vida real.</p>
+          <p class="quote">É o inverno gourmet, do seu jeito.</p>
+          <div class="stats">
+            <div class="st"><b>+25</b><span>receitas</span></div>
+            <div class="st"><b>4</b><span>bônus inclusos</span></div>
+            <div class="st"><b>7 dias</b><span>de garantia</span></div>
+          </div>
+          <a class="btn" href="#oferta">Quero as receitas da chef <svg class="arw" width="20" height="20"><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section class="sec sec--cream2">
+    <div class="wrap">
+      <div class="center" data-reveal>
+        <span class="eyebrow">Quem já testou</span>
+        <h2 class="h-lg">Quem provou, <em>aprovou</em>.</h2>
+        <p class="tnote">Depoimentos ilustrativos — substitua pelos prints reais dos seus clientes.</p>
+      </div>
+      <div class="tgrid">
+        <div class="tcard" data-reveal><div class="stars">★★★★★</div><p>"Fiz o creme de abóbora num domingo frio e meu marido pediu de novo no dia seguinte. Virou rotina aqui em casa."</p><div class="who">Mariana R. · Curitiba</div></div>
+        <div class="tcard" data-reveal><div class="stars">★★★★★</div><p>"Eu vivia pedindo delivery no inverno. Agora resolvo o jantar em 20 minutos e ainda economizo."</p><div class="who">Patrícia L. · São Paulo</div></div>
+        <div class="tcard" data-reveal><div class="stars">★★★★★</div><p>"As opções low carb salvaram minha dieta no frio. Como quentinho, gostoso e não saio do eixo."</p><div class="who">Camila S. · Porto Alegre</div></div>
+        <div class="tcard" data-reveal><div class="stars">★★★★★</div><p>"O fondue de bônus transformou o aniversário do meu namorado num jantar inesquecível."</p><div class="who">Beatriz M. · Belo Horizonte</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="center" data-reveal>
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2 class="h-lg">Tudo o que você quer saber, <em>respondido</em>.</h2>
+      </div>
+      <div class="faq" data-reveal>
+        <details open><summary>Como recebo? Quando posso começar? <span class="pm">+</span></summary><div class="ans">Assim que o pagamento é confirmado, o e-book chega no seu e-mail. Você pode começar a cozinhar hoje mesmo.</div></details>
+        <details><summary>Tem garantia? <span class="pm">+</span></summary><div class="ans">Tem, 7 dias incondicional. Não gostou, devolvemos 100% do valor. Simples assim.</div></details>
+        <details><summary>Preciso de equipamento caro? <span class="pm">+</span></summary><div class="ans">Não. As receitas usam panela comum ou de pressão e o que você já tem em casa.</div></details>
+        <details><summary>As receitas são realmente saborosas? <span class="pm">+</span></summary><div class="ans">São as que mais fazem sucesso na cozinha da Nathássia. Sabor de comida de verdade, com toque gourmet.</div></details>
+        <details><summary>Quanto tempo duram? Dá pra congelar? <span class="pm">+</span></summary><div class="ans">Sim. A maioria pode ser feita em quantidade e congelada em porções — prepara uma vez, tem pra vários dias.</div></details>
+        <details><summary>Dá pra preparar tudo de uma vez pra semana? <span class="pm">+</span></summary><div class="ans">Dá. Muita gente cozinha no domingo e deixa as porções prontas pra semana inteira.</div></details>
+        <details><summary>Funciona pra quem tem pouco tempo? <span class="pm">+</span></summary><div class="ans">Funciona. São receitas diretas, várias prontas em cerca de 20 minutos.</div></details>
+        <details><summary>Vou passar fome nas opções leves? <span class="pm">+</span></summary><div class="ans">Não. Os caldos e sopas são encorpados e servem como refeição completa — você come pouco e fica satisfeito.</div></details>
+        <details><summary>Serve pra família comer junto? <span class="pm">+</span></summary><div class="ans">Serve. Tem rendimento indicado e versões vegetarianas/veganas pra ninguém ficar de fora.</div></details>
+        <details><summary>Os ingredientes são fáceis de encontrar? <span class="pm">+</span></summary><div class="ans">Todos. Nada caro ou difícil — é o que tem no mercado do seu bairro.</div></details>
+      </div>
+      <div class="center" style="margin-top:38px" data-reveal>
+        <a class="btn" href="#oferta">Quero começar meu Inverno Gourmet <svg class="arw" width="20" height="20"><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="sec sec--sand final">
+    <div class="wrap" data-reveal>
+      <span class="eyebrow">Última chamada</span>
+      <h2 class="h-xl">Seu inverno mais <em>gostoso</em> começa agora.</h2>
+      <p class="lead center">Acesso imediato. 7 dias de garantia. É só baixar e começar a cozinhar hoje.</p>
+      <a class="btn mt-cta" href="#">Quero começar agora <svg class="arw" width="20" height="20"><use href="#arrow"/></svg></a>
+      <p class="micro">De R$ 127 por R$ 19,90 · Pix ou cartão</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand"><span class="mark"></span> Nathássia Pécora</div>
+        <p class="ftag">Receitas de inverno fáceis, gostosas e gourmet — porque a cozinha é pra todo mundo.</p>
+      </div>
+      <div>
+        <h4>O produto</h4>
+        <ul><li><a href="#oferta">A oferta</a></li><li><a href="#">O que vem dentro</a></li><li><a href="#">Bônus</a></li></ul>
+      </div>
+      <div>
+        <h4>Suporte</h4>
+        <ul><li><a href="#">Contato</a></li><li><a href="#">Perguntas frequentes</a></li><li><a href="#">Acessar minha compra</a></li></ul>
+      </div>
+      <div>
+        <h4>Pague com</h4>
+        <div class="chips"><span class="chip">Pix</span><span class="chip">Cartão</span></div>
+      </div>
+    </div>
+    <div class="legal">
+      <p class="disc">© 2026 Nathássia Pécora · Todos os direitos reservados. Este site não pertence ao Facebook/Meta ou Google e não é afiliado a essas plataformas. Os resultados podem variar de pessoa para pessoa.</p>
+      <p><a href="#">Termos de uso</a> · <a href="#">Privacidade</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var totalSeconds = 23*3600 + 54*60 + 7;
+    var el = document.getElementById('countdown');
+    function tick(){
+      if (totalSeconds <= 0){ totalSeconds = 23*3600 + 54*60 + 7; }
+      var h = Math.floor(totalSeconds/3600);
+      var m = Math.floor((totalSeconds%3600)/60);
+      var s = totalSeconds%60;
+      el.textContent = [h,m,s].map(function(n){ return String(n).padStart(2,'0'); }).join(':');
+      totalSeconds--;
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-reveal]').forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
