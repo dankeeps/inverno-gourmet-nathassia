@@ -41,6 +41,7 @@
     font-family:"Inter",-apple-system,system-ui,sans-serif;
     background:var(--cream);color:var(--ink);
     line-height:1.7;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
   .serif{font-family:"Playfair Display",Georgia,"Times New Roman",serif}
   em{font-style:italic;color:var(--orange)}
@@ -131,7 +132,7 @@
   .sp-av3{background:#c79a5b}
   .sp-more{display:grid;place-items:center;background:var(--orange);color:#fff;font-size:.72rem;font-weight:700}
   .sp-quote p{font-size:.92rem;color:var(--ink);margin:0}
-  .sp-line{display:inline-block;white-space:nowrap;font-size:clamp(.62rem,3.6vw,.92rem)}
+  .sp-line{display:inline-block;white-space:nowrap;font-size:clamp(.5rem,3.3vw,.92rem)}
   .sp-quote em{font-style:italic;color:var(--muted)}
   .hero-media{position:relative}
   .hero-media .ph{aspect-ratio:1448/1086;box-shadow:var(--shadow)}
@@ -299,6 +300,7 @@
     .guarantee{flex-direction:column;text-align:center}
     .marquee__group span{font-size:1.3rem;padding:0 24px}
     .marquee__group span::after{width:8px;height:8px}
+    .sp-quote{flex-direction:column;align-items:center;text-align:center;gap:8px}
     .marquee__track{animation-duration:22s}
     .price-box .now{font-size:2.6rem}
     .legal{flex-direction:column}
