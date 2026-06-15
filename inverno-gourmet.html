@@ -98,7 +98,7 @@
   .ph.tomato{background:linear-gradient(135deg,#d7642f,#a23315)}
 
   /* announcement + nav */
-  .announce{background:var(--green);color:var(--cream-dim);text-align:center;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:10px 16px;font-weight:500}
+  .announce{background:var(--green);color:var(--cream-dim);text-align:center;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:10px 16px;font-weight:500;white-space:nowrap;overflow-x:auto}
   .announce b{color:#e08a4f}
   .nav{background:var(--cream);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
@@ -266,6 +266,7 @@
     .foot .cols{grid-template-columns:1fr 1fr}
   }
   @media (max-width:560px){
+    .announce{font-size:.6rem;letter-spacing:.08em;padding:9px 12px}
     .sec{padding:60px 0}
     .wrap{padding:0 18px}
     .cards,.bonus,.features,.tgrid{grid-template-columns:1fr}
