@@ -63,7 +63,7 @@
   .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange)}
   .sec--green .eyebrow{color:#e08a4f}
 
-  .h-xl{font-size:clamp(2.5rem,5.4vw,4.2rem)}
+  .h-xl{font-size:clamp(2.5rem,5.4vw,4.2rem);font-weight:800}
   .h-lg{font-size:clamp(2rem,4.2vw,3.1rem)}
   .lead{font-size:1.08rem;color:var(--ink);max-width:54ch}
   .sec--green .lead{color:var(--cream-dim)}
@@ -109,7 +109,7 @@
   .nav .pill:hover{background:var(--green);color:var(--cream)}
 
   /* hero */
-  .hero{background:var(--cream);padding:70px 0 60px}
+  .hero{background:linear-gradient(180deg,var(--cream-2) 0%,var(--cream) 55%);padding:70px 0 60px}
   .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
   .hero h1{margin-bottom:24px}
   .hero .lead{margin-bottom:10px}
@@ -330,8 +330,8 @@
       <div class="grid">
         <div class="hero-copy" data-reveal>
           <span class="eyebrow">E-book · Inverno Gourmet</span>
-          <h1 class="h-xl">Receitas quentinhas pra deixar o frio mais gostoso.</h1>
-          <p class="lead">Mais de 25 sopas, caldos e cremes gourmet pra você jantar bem, se aquecer e manter a rotina leve — sem passar horas na cozinha.</p>
+          <h1 class="h-xl"><em>Receitas quentinhas</em> pra deixar o frio mais gostoso.</h1>
+          <p class="lead"><b>Mais de 25 sopas, caldos e cremes gourmet</b> pra você jantar bem, se aquecer e manter a rotina leve — <b>sem passar horas na cozinha</b>.</p>
           <p class="byline">Direto da cozinha da chef Nathássia Pécora.</p>
           <a class="btn" href="#oferta">Quero minhas receitas <svg class="arw" width="20" height="20"><use href="#arrow"/></svg></a>
           <div class="trust">
