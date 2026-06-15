@@ -117,6 +117,21 @@
   .trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:.86rem;color:var(--muted);font-weight:500}
   .trust span{display:inline-flex;align-items:center;gap:7px}
   .trust svg{width:16px;height:16px;color:var(--green-soft)}
+
+  /* mobile social proof */
+  .social-proof{display:none}
+  .sp-stars{color:#e3a23f;font-size:1.15rem;letter-spacing:.1em}
+  .sp-stars span{font-family:"Inter",sans-serif;font-size:.86rem;color:var(--muted);font-weight:500;letter-spacing:normal;margin-left:6px}
+  .sp-quote{display:flex;align-items:center;gap:16px;margin-top:18px;text-align:left}
+  .sp-avatars{display:flex;flex:0 0 auto}
+  .sp-av{width:40px;height:40px;border-radius:50%;border:2px solid var(--cream);margin-left:-12px;background:var(--green-soft)}
+  .sp-av:first-child{margin-left:0}
+  .sp-av1{background:#6b3a25}
+  .sp-av2{background:var(--green-soft)}
+  .sp-av3{background:#c79a5b}
+  .sp-more{display:grid;place-items:center;background:var(--orange);color:#fff;font-size:.72rem;font-weight:700}
+  .sp-quote p{font-size:.92rem;color:var(--ink);margin:0}
+  .sp-quote em{font-style:italic;color:var(--muted)}
   .hero-media{position:relative}
   .hero-media .ph{aspect-ratio:1448/1086;box-shadow:var(--shadow)}
   .hero-media .ico{width:70px;height:70px}
@@ -125,11 +140,11 @@
 
   /* category band — esteira / marquee */
   .cats{background:var(--green);color:var(--cream-dim)}
-  .marquee{overflow:hidden;padding:18px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .marquee{overflow:hidden;padding:26px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
   .marquee__track{display:flex;width:max-content;animation:cats-scroll 28s linear infinite}
   .marquee__group{display:flex;align-items:center;flex:0 0 auto}
-  .marquee__group span{font-family:"Playfair Display",serif;font-size:1.12rem;white-space:nowrap;padding:0 30px;position:relative;color:var(--cream-dim)}
-  .marquee__group span::after{content:"·";position:absolute;right:-2px;top:50%;transform:translateY(-50%);color:#e08a4f}
+  .marquee__group span{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:clamp(1.3rem,2.6vw,1.9rem);white-space:nowrap;padding:0 38px;position:relative;color:var(--cream-dim)}
+  .marquee__group span::after{content:"";position:absolute;right:-6px;top:50%;width:10px;height:10px;border-radius:50%;background:#e08a4f;transform:translateY(-50%)}
   @keyframes cats-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* checklist block */
@@ -264,10 +279,10 @@
     .hero-copy{display:contents}
     .hero-copy{text-align:center}
     .hero-copy .eyebrow,.hero-copy .byline{display:none}
-    .hero-copy .trust{justify-content:center}
+    .hero-copy .trust{display:none}
     .hero-media{order:2;max-width:420px;margin:0 auto}
     .hero-copy > .btn{order:3;margin:0 auto}
-    .hero-copy > .trust{order:4}
+    .hero-copy > .social-proof{order:4;display:block;width:100%}
     .cards,.bonus,.features{grid-template-columns:repeat(2,1fr)}
     .wide-strip{grid-template-columns:repeat(3,1fr)}
     .foot .cols{grid-template-columns:1fr 1fr}
@@ -281,7 +296,8 @@
     .wide-strip{grid-template-columns:1fr 1fr}
     .stats{gap:26px}
     .guarantee{flex-direction:column;text-align:center}
-    .marquee__group span{font-size:1rem;padding:0 22px}
+    .marquee__group span{font-size:1.3rem;padding:0 24px}
+    .marquee__group span::after{width:8px;height:8px}
     .marquee__track{animation-duration:22s}
     .price-box .now{font-size:2.6rem}
     .legal{flex-direction:column}
@@ -338,6 +354,13 @@
             <span><svg><use href="#check"/></svg> +25 receitas</span>
             <span><svg><use href="#check"/></svg> 4 bônus inclusos</span>
             <span><svg><use href="#check"/></svg> acesso vitalício</span>
+          </div>
+          <div class="social-proof">
+            <div class="sp-stars">★★★★★ <span>+500 mil seguidoras</span></div>
+            <div class="sp-quote">
+              <div class="sp-avatars"><span class="sp-av sp-av1"></span><span class="sp-av sp-av2"></span><span class="sp-av sp-av3"></span><span class="sp-av sp-more">+99</span></div>
+              <p>“Virou o jantar preferido de casa nas noites frias.”<br>— <em>relato real, junho</em></p>
+            </div>
           </div>
         </div>
         <div class="hero-media" data-reveal>
